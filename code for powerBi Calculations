@@ -1,0 +1,15 @@
+# of competitors = DISTINCTCOUNT('Olympic Games Data'[ID]) 
+
+# of medals = COUNTROWS('Olympic Games Data')
+
+
+# of medals (registered) = 
+CALCULATE (
+    [# of medals],
+    FILTER (
+        'Olympic Games Data',
+        'Olympic Games Data'[medal] = "Bronze"
+            || 'Olympic Games Data'[medal] = "Gold"
+            || 'Olympic Games Data'[medal] = "Silver"
+    )
+)
